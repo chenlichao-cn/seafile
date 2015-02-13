@@ -230,6 +230,7 @@ int
 seaf_repo_manager_delete_repo_tokens_by_peer_id (SeafRepoManager *mgr,
                                                  const char *email,
                                                  const char *peer_id,
+                                                 GList **tokens,
                                                  GError **error);
 
 gint64

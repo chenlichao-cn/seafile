@@ -2457,6 +2457,13 @@ auto_sync_pulse (void *vmanager)
             continue;
         }
 
+        if (!repo->token) {
+            /* If the user has logged out of the account, the repo token would
+             * be null */
+            seaf_debug ("repo token of %s is null, no sync\n", repo->name);
+            continue;
+        }
+
         /* Don't sync repos not checked out yet. */
         if (!repo->head)
             continue;
